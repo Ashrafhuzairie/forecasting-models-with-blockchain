@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "warehouse-forecasting-models"
+version = "1.0.0"
+description = "Forecasting model comparison for automated warehouse replenishment"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Mohd Ashraf Huzairie"}]
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.24,<3",
+  "pandas>=2.0,<3",
+  "scikit-learn>=1.3,<2",
+  "statsmodels>=0.14,<1",
+  "PyYAML>=6,<7",
+  "joblib>=1.3,<2",
+  "matplotlib>=3.7,<4",
+  "openpyxl>=3.1,<4",
+]
+
+[project.optional-dependencies]
+deep-learning = ["tensorflow>=2.13,<3"]
+web = ["flask>=3,<4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["warehouse_forecasting*"]
